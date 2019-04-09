@@ -1,0 +1,2 @@
+class CampCategory < ApplicationRecord
+end
