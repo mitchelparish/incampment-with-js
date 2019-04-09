@@ -4,22 +4,29 @@ class CampsController < ApplicationController
     @camps = Camp.all
   end
 
-  def show
-    @camp = Camp.find(params[:id])
-  end
-
   def new
     @camp = Camp.new
   end
 
   def create
-    camp = Camp.create
-    redirect_to @camp
+    @camp = Camp.new(camp_params)
+    if @camp.save
+      redirect_to @camp
+    else
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def show
+    @camp = Camp.find_by(id: params[:id])
   end
 
   private
 
-  def post_params
-    # params.require(:post).permit(:title, :content, category_ids:[], categories_attributes: [:name])
+  def camp_params
+    params.require(:camp).permit(:name, :state, :description, :lat, :lng)
   end
 end

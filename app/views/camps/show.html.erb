@@ -1,0 +1,13 @@
+<h2>This is the Camp SHOW page<h2>
+
+<h3><%= @camp.name %></h3><br>
+<p>Located in: <%= @camp.state %></p>
+<p>GPS Coordinates: <%= @camp.lat %>, <%= @camp.lng %></p>
+<p>Last Updated: <%= @camp.updated_at.strftime("%b %d, %Y") %></p>
+<p>Description: <br><br>
+<%= @camp.description %></p>
+
+
+Edit
+Delete
+<%= link_to "Back to Camps", camps_path %>

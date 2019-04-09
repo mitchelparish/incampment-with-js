@@ -1,1 +1,7 @@
-Testeroooo
+<h2>Pitch Yer Tent Pardner!</h2>
+
+<% @camps.each do |camp| %>
+<%= link_to camp.name, camp_path(camp) %><br>
+<% end %><br><br>
+
+<%= link_to "Create New Camp", new_camp_path %>

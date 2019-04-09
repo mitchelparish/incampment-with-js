@@ -1,1 +1,24 @@
-Testalonza
+<h2>Create a New Campsite:</h2>
+<%= form_for @camp do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :state %>
+    <%= f.select :state, us_states, include_blank: true, :prompt => 'Select State' %>
+    <br>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+    <br>
+    <%= f.label :Latitude %>
+    <%= f.text_field :lat %>
+    <br>
+    <%= f.label :Longitude %>
+    <%= f.text_field :lng %>
+    <br>
+    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+    <%= f.fields_for :categories, @camp.categories.build do |categories_fields| %>
+      <%= categories_fields.text_field :name %>
+    <% end %>
+    <br>
+    <%= f.submit %>
+<% end %>
