@@ -17,11 +17,18 @@ class CampsController < ApplicationController
     end
   end
 
-  def edit
+  def show
+    @camp = Camp.find(params[:id])
   end
 
-  def show
-    @camp = Camp.find_by(id: params[:id])
+  def edit
+    @camp = Camp.find(params[:id])
+  end
+
+  def update
+    @camp = Camp.find(params[:id])
+    @camp.update(camp_params)
+    redirect_to @camp
   end
 
   private
