@@ -13,6 +13,7 @@ class CampsController < ApplicationController
     if @camp.save
       redirect_to @camp
     else
+  # add flash alert for unsuccessful form submission
       render :new
     end
   end
@@ -27,8 +28,12 @@ class CampsController < ApplicationController
 
   def update
     @camp = Camp.find(params[:id])
-    @camp.update(camp_params)
-    redirect_to @camp
+    if @camp.update(camp_params)
+      redirect_to @camp
+    else
+  # add flash alert for unsuccessful edit submission 
+      redirect_to edit_camp_path
+    end
   end
 
   private
