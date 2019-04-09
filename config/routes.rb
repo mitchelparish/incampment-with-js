@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   resources :camps
   resources :categories
   resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  # reviews will be nested under users
+  # /users/1/reviews
+   # root 'users#show'
+
 end
