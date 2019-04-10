@@ -1,0 +1,27 @@
+<h2>Create a New Account</h2>
+
+<%= form_for(@user, url: register_path(@user)) do |f| %>
+
+<div class="login_fields">
+<%= f.label :first_name %>
+<%= f.text_field :first_name %>
+</div>
+
+<div class="login_fields">
+<%= f.label :last_name %>
+<%= f.text_field :last_name %>
+</div>
+
+<div class="login_fields">
+<%= f.label :email %>
+<%= f.text_field :email %>
+</div>
+
+<div class="login_fields">
+<%= f.label :password %>
+<%= f.password_field :password %>
+</div>
+
+<%= f.submit "Login" %>
+
+<% end %>

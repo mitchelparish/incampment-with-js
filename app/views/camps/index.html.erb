@@ -1,7 +1,14 @@
 <h2>Pitch Yer Tent Pardner!</h2>
+<br>
+<%= link_to "Create New Camp" , new_camp_path %>
+<br>
+<%= link_to "Log Out", logout_path %>
+<br><br>
+
+
+
+
 
 <% @camps.each do |camp| %>
 <%= link_to camp.name, camp_path(camp) %><br>
 <% end %><br><br>
-
-<%= link_to "Create New Camp" , new_camp_path %>
