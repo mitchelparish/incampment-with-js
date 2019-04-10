@@ -1,5 +1,5 @@
 class CampsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   # think about custom 403 forbidden pages
 

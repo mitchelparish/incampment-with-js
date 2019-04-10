@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :reviews
+
   resources :camps
   resources :categories
-  resources :users
+
+  root 'camps#index'
+
 
   # SessionsController
   get '/login', to: 'sessions#new'
@@ -13,8 +15,10 @@ Rails.application.routes.draw do
   get '/register', to: 'registrations#new'
   post '/register', to: 'registrations#create'
 
-
-
+  # Nested Resources for Users/Reviews
+  resources :users, only: [:show] do
+    resources :reviews, only: [:new, :create, :show, :update, :destroy]
+  end
 
 
   # reviews will be nested under users

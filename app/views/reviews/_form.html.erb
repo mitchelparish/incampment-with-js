@@ -1,0 +1,9 @@
+<%= form_for user_reviews_path do |f| %>
+    <%= f.label :rating %>
+    <%= f.number_field :name, max: 5, min: 1 %>
+    <br>
+    <%= f.label :comments %>
+    <%= f.text_area :comments, size: "20" %>
+    <br>
+    <%= f.submit "Submit Review" %>
+<% end %>
