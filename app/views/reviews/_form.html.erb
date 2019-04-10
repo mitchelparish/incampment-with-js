@@ -1,4 +1,7 @@
-<%= form_for user_reviews_path do |f| %>
+<%= form_for new_user_review_path do |f| %>
+
+    <%= f.hidden_field :camp_id %>
+
     <%= f.label :rating %>
     <%= f.number_field :name, max: 5, min: 1 %>
     <br>

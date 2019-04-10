@@ -21,8 +21,8 @@ Rails.application.routes.draw do
   end
 
 
+
   # reviews will be nested under users
   # /users/1/reviews
-   # root 'users#show'
 
 end

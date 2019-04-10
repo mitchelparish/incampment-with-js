@@ -8,4 +8,6 @@ class Camp < ApplicationRecord
   validates :name, uniqueness: true
   validates :lat , numericality: { greater_than_or_equal_to:  -90, less_than_or_equal_to:  90 }
   validates :lng, numericality: { greater_than_or_equal_to: -180, less_than_or_equal_to: 180 }
+
+  # accepts_nested_attributes_for :reviews
 end
