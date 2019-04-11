@@ -2,8 +2,6 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    if current_user == session[:user_id]
-  end 
-
+    @user = User.find_by(id: params[:id])
   end
 end
