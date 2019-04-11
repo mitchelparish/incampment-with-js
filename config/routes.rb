@@ -17,4 +17,8 @@ Rails.application.routes.draw do
   resources :camps do
     resources :reviews, only: [:new, :create, :show, :update, :destroy]
   end
+
+  # OmniAuth Callback
+  get '/auth/:provider/callback', to: 'sessions#create'
+
 end
