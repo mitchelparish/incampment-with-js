@@ -14,7 +14,7 @@
     <%= f.label :Longitude %>
     <%= f.text_field :lng %>
     <br>
-    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+    <%= f.collection_check_boxes :categories, Category.all, :id, :name %>
 
 
     <br>

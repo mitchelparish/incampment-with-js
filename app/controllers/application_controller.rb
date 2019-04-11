@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user, :logged_in?, :authenticate_user!
+  helper_method :current_user, :logged_in?
   # Makes these methods (defined below) available to views
 
   private
@@ -14,5 +14,9 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     redirect_to login_path if !logged_in?
+  end
+
+  def validate_user
+    redirect_to root_path unless current_user.id.to_s == params[:id]
   end
 end
