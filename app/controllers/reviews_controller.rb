@@ -13,7 +13,6 @@ class ReviewsController < ApplicationController
       # redirect_to camp_review_path(@review.camp, @review) - Specific review show page NO!
     else
     # add flash alert for unsuccessful form submission
-    # Don't forget to assign the user
       render :new
     end
   end
@@ -22,11 +21,27 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 
+  def edit
+    @review = Review.find(params[:id])
+  end
 
+  def update
+    @review = Review.find(params[:id])
+    if @review.update(reviews_params)
+      redirect_to user_path(current_user.id)
+    else
+  # add flash alert for unsuccessful edit submission
+      # redirect_to edit_review_path
+    end
+  end
 
-
-
-
+  def destroy
+    if Review.find(params[:id]).destroy
+      redirect_to user_path(current_user.id)
+    else
+      redirect_to root_path
+    end
+  end
 
   private
 

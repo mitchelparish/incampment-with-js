@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   # Nested Resources for Users/Reviews
   resources :camps do
-    resources :reviews, only: [:new, :create, :show, :update, :destroy]
+    resources :reviews
   end
 
   # OmniAuth Callback

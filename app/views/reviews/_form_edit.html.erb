@@ -1,0 +1,12 @@
+<%= form_for @review, url:camp_review_path do |f| %>
+
+    <%= f.hidden_field :camp_id %>
+
+    <%= f.label :rating %>
+    <%= f.number_field :rating, max: 5, min: 1 %>
+    <br>
+    <%= f.label :comments %>
+    <%= f.text_area :comments, size: "20" %>
+    <br>
+    <%= f.submit "Edit Review" %>
+<% end %>
