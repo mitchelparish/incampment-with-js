@@ -10,10 +10,7 @@ class ReviewsController < ApplicationController
 
     if @review.save
       redirect_to camp_path(@review.camp)
-      # redirect_to camp_review_path(@review.camp, @review)
-
-
-
+      # redirect_to camp_review_path(@review.camp, @review) - Specific review show page NO!
     else
     # add flash alert for unsuccessful form submission
     # Don't forget to assign the user

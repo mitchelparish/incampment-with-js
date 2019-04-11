@@ -7,6 +7,19 @@
 <p>Description: <br><br>
 <%= @camp.description %></p>
 
+<% if !@camp.reviews.empty? %>
 <%= link_to "Write A Review", new_camp_review_path(@camp) %>
+<% end %>
 <%= link_to "Edit", edit_camp_path %><br>
-<%= link_to "Back to Camps", camps_path %>
+
+<%= link_to "Back to Camps", camps_path %><br>
+
+<h3>Reviews</h3>
+<% if @camp.reviews.empty? %>
+<%= link_to "Write the first review", new_camp_review_path(@camp) %>
+<% else %>
+<% @camp.reviews.each do |review| %>
+<p> Rating: <%= review.rating %><br>
+<%= review.comments %></p>
+<% end %>
+<% end %>

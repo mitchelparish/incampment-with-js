@@ -1,3 +1,9 @@
-<h2>User: <%= @user.first_name %></h2>
+<h2>Howdy <%= @user.first_name %></h2>
+<br>
+<h3>Past Reviews</h3>
+<p><% @user.reviews.each do |review| %>
+<%= review.camp.name %><br>
+<%= review.rating %><br>
+<%= review.comments %><br>
 
-<p> User's Reviews Here</p>
+<% end %> </p>
