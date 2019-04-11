@@ -5,14 +5,24 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(review_params)
+    @review = Review.new(reviews_params)
+    @review.user = current_user
+
     if @review.save
-      redirect_to @review
+      redirect_to camp_path(@review.camp)
+      # redirect_to camp_review_path(@review.camp, @review)
+
+
+
     else
     # add flash alert for unsuccessful form submission
     # Don't forget to assign the user
       render :new
     end
+  end
+
+  def show
+    @review = Review.find(params[:id])
   end
 
 
