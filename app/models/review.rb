@@ -4,7 +4,7 @@ class Review < ApplicationRecord
 
   validates_presence_of :rating, :comments
 
-  def top_reviews
-    Review.where(rating: 5)
+  def self.top_rated
+    self.where(rating: 5).limit(10)
   end
 end

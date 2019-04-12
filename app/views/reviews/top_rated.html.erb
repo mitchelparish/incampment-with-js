@@ -1,0 +1,9 @@
+<br>
+<br>
+<% @reviews.each do |review| %>
+<p><%= link_to review.camp.name, camp_path(review.camp_id) %><br>
+  Located in: <%= review.camp.state %><br>
+  Rating: <%= review.rating %><br>
+<%= review.comments %></p>
+<br>
+<% end %>

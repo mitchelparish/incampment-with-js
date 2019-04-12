@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def validate_user
-    redirect_to root_path unless current_user.id.to_s == params[:id]
+    redirect_to root_path unless current_user
+    #.id.to_s == params[:id]
   end
 end

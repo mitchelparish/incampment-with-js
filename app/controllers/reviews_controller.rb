@@ -11,9 +11,7 @@ class ReviewsController < ApplicationController
 
     if @review.save
       redirect_to camp_path(@review.camp)
-      # redirect_to camp_review_path(@review.camp, @review) - Specific review show page NO!
     else
-    # add flash alert for unsuccessful form submission
       render :new
     end
   end
@@ -31,7 +29,6 @@ class ReviewsController < ApplicationController
     if @review.update(reviews_params)
       redirect_to user_path(current_user.id)
     else
-  # add flash alert for unsuccessful edit submission
       # redirect_to edit_review_path
     end
   end
@@ -42,6 +39,10 @@ class ReviewsController < ApplicationController
     else
       redirect_to root_path
     end
+  end
+
+  def top_rated
+    @reviews = Review.top_rated
   end
 
   private
