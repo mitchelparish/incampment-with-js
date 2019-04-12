@@ -17,12 +17,12 @@
           <li class="nav-item">
             <a class="nav-link" <%= link_to "Find Campsite", root_path %> </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" <%= link_to "Top Rated", root_path %> </a>
+          </li>
           <% if logged_in? %>
           <li class="nav-item">
-            <a class="nav-link" <%= link_to "Create Campsite", new_camp_path %> </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" <%= link_to "User Profile", user_path(current_user.id) %> </a>
+            <a class="nav-link" <%= link_to "New Campsite", new_camp_path %> </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" <%= link_to "Logout", logout_path %> </a>

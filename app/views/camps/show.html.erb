@@ -1,5 +1,4 @@
-<h2>This is the Camp SHOW page<h2>
-
+<br>
 <h3><%= @camp.name %></h3><br>
 <p>Located in: <%= @camp.state %></p>
 <p>GPS Coordinates: <%= @camp.lat %>, <%= @camp.lng %></p>
@@ -12,7 +11,7 @@
 <% end %>
 <%= link_to "Edit", edit_camp_path %><br>
 
-<%= link_to "Back to Camps", camps_path %><br>
+<%= link_to "Back to Camps", camps_path %><br><br><br>
 
 <h3>Reviews</h3>
 <% if @camp.reviews.empty? %>

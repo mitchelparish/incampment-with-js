@@ -1,22 +1,30 @@
+<% if @camp.errors.any? %>
+  <div class="fields_with_errors">
+    <ul>
+    <% @camp.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @camp do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <br>
-    <%= f.label :state %>
-    <%= f.select :state, us_states, include_blank: true, :prompt => 'Select State' %>
-    <br>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-    <br>
-    <%= f.label :Latitude %>
-    <%= f.text_field :lat %>
-    <br>
-    <%= f.label :Longitude %>
-    <%= f.text_field :lng %>
-    <br>
-    <%= f.collection_check_boxes :categories, Category.all, :id, :name %>
-
-
-    <br>
-    <%= f.submit %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :state %>
+  <%= f.select :state, us_states, include_blank: true, :prompt => 'Select State' %>
+  <br>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <br>
+  <%= f.label :Latitude %>
+  <%= f.text_field :lat %>
+  <br>
+  <%= f.label :Longitude %>
+  <%= f.text_field :lng %>
+  <br>
+  <%= f.collection_check_boxes :categories, Category.all, :id, :name %>
+  <br>
+  <%= f.submit %>
 <% end %>

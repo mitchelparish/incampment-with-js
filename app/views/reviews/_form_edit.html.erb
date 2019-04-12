@@ -1,12 +1,23 @@
+<% if @review.errors.any? %>
+  <div class="fields_with_errors">
+    <ul>
+    <% @review.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @review, url:camp_review_path do |f| %>
 
-    <%= f.hidden_field :camp_id %>
+  <%= f.hidden_field :camp_id %>
 
-    <%= f.label :rating %>
-    <%= f.number_field :rating, max: 5, min: 1 %>
-    <br>
-    <%= f.label :comments %>
-    <%= f.text_area :comments, size: "20" %>
-    <br>
-    <%= f.submit "Edit Review" %>
+  <%= f.label :rating %>
+  <%= f.number_field :rating, max: 5, min: 1 %>
+  <br>
+  <%= f.label :comments %>
+  <%= f.text_area :comments, size: "20" %>
+  <br>
+
+  <%= f.submit "Edit Review" %>
 <% end %>

@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
   root 'camps#index'
-  resources :categories
-  resources :users
+  resources :categories, only: :show
+  resources :users, only: :show
+
+  # ActiveRecord Scope Method Requirement
+  get '/top_reviews', to: 'reviews#top_reviews'
 
   # SessionsController
   get '/login', to: 'sessions#new'

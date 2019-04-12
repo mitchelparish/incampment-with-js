@@ -13,8 +13,13 @@
  *= require_tree .
  *= require_self
  */
- body {
-   background-image: url("background.jpg");
+
+ /* body {
+   background-image: url("");
    background-repeat: repeat;
    width: 100%;
+ } */
+
+ .fields_with_errors {
+   color: red;
  }
