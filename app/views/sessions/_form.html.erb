@@ -1,0 +1,27 @@
+<% if @user.errors.any? %>
+  <div class="fields_with_errors">
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for(@user, url: login_path(@user)) do |f| %>
+
+<div class="login_fields">
+<%= f.label :username %>
+<%= f.text_field :username %>
+</div>
+
+<div class="login_fields">
+<%= f.label :password %>
+<%= f.password_field :password %>
+</div>
+
+<%= f.submit "Login" %>
+<br>
+<%= link_to 'Login with Github', '/auth/github' %>
+
+<% end %>

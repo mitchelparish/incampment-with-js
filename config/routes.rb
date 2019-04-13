@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'camps#index'
   get 'profile', to: 'users#show'
-  resources :categories, only: :show
+  resources :categories, only: :show 
 
   # RegistrationsController
   get '/register', to: 'registrations#new'

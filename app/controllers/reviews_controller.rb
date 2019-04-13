@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :top_rated
 
   def new
     @review = Review.new(camp_id: params[:camp_id])
@@ -29,7 +29,7 @@ class ReviewsController < ApplicationController
     if @review.update(reviews_params)
       redirect_to user_path(current_user.id)
     else
-      # redirect_to edit_review_path
+      redirect_to edit_review_path
     end
   end
 

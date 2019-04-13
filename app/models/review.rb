@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :user
-  belongs_to :camp
+  belongs_to :camp, dependent: :destroy
 
   validates_presence_of :rating, :comments
 

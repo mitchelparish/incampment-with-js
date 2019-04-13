@@ -1,14 +1,14 @@
-<h2>Howdy <%= @user.first_name %></h2>
-<br>
+<br><br>
 <h3>Past Reviews</h3>
 <br>
-<p><% @user.reviews.each do |review| %>
+<% @user.reviews.each do |review| %>
 <%= review.camp.name %><br>
 Rating: <%= review.rating %><br>
 <%= review.comments %><br>
-<%= link_to "Edit", edit_camp_review_path(review.camp_id, review.id) %><br>
+<%= link_to "Edit", edit_camp_review_path(review.camp_id, review.id) %>
+<br><br>
 
 
           <!-- Delete function currently not working -->
-<br><br>
-<% end %> </p>
+
+<% end %>

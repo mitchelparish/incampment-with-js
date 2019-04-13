@@ -1,10 +1,9 @@
 class CampsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
-  # think about custom 403 forbidden pages
-
   def index
     @camps = Camp.all
+    @categories = Category.all
   end
 
   def new
@@ -13,10 +12,10 @@ class CampsController < ApplicationController
 
   def create
     @camp = Camp.new(camp_params)
+    byebug
     if @camp.save
       redirect_to @camp
     else
-  # add flash alert for unsuccessful form submission
       render :new
     end
   end
@@ -34,7 +33,6 @@ class CampsController < ApplicationController
     if @camp.update(camp_params)
       redirect_to @camp
     else
-  # add flash alert for unsuccessful edit submission
       redirect_to edit_camp_path
     end
   end
@@ -42,6 +40,6 @@ class CampsController < ApplicationController
   private
 
   def camp_params
-    params.require(:camp).permit(:name, :state, :description, :lat, :lng)
+    params.require(:camp).permit(:name, :state, :description, :lat, :lng, :categories)
   end
 end
