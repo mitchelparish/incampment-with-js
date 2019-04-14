@@ -10,12 +10,12 @@
 
 <%= form_for(@user, url: login_path(@user)) do |f| %>
 
-<div class="login_fields">
+<div class="login-fields">
   <%= f.label :username %>
   <%= f.text_field :username %>
 </div>
 
-<div class="login_fields">
+<div class="login-fields">
   <%= f.label :password %>
   <%= f.password_field :password %>
 </div>

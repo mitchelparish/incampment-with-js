@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
 
   # Nested Resources for Users/Reviews
-  resources :camps, only: [:new, :create, :show, :edit, :update] do
+  resources :camps, only: [:index, :new, :create, :show, :edit, :update] do
     resources :reviews, only: [:new, :create, :edit, :update, :destroy]
   end
 

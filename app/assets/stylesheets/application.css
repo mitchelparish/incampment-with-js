@@ -14,12 +14,22 @@
  *= require_self
  */
 
- /* body {
-   background-image: url("");
-   background-repeat: repeat;
-   width: 100%;
- } */
-
- .fields_with_errors {
-   color: red;
+ body {
+   background: url(backgroundtree.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
  }
+
+.col-lg-10 {
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(277, 226, 226);
+  opacity: .3;
+}
+
+  .fields_with_errors {
+    color: red;
+  }
