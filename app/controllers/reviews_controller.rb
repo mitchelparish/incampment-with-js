@@ -35,9 +35,9 @@ class ReviewsController < ApplicationController
 
   def destroy
     if Review.find(params[:id]).destroy
-      redirect_to user_path(current_user.id)
+      redirect_to profile_path
     else
-      redirect_to root_path
+      redirect_to profile_path
     end
   end
 

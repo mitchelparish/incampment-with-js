@@ -8,16 +8,18 @@
   </div>
 <% end %>
 
-<%= form_for @review, url:camp_review_path do |f| %>
+  <%= @review.camp.name %> - <%= @review.camp.state %><br><br>
+  <%= form_for @review, url:camp_review_path do |f| %>
 
-  <%= f.hidden_field :camp_id %>
+    <%= f.hidden_field :camp_id %>
 
-  <%= f.label :rating %>
-  <%= f.number_field :rating, max: 5, min: 1 %>
-  <br>
-  <%= f.label :comments %>
-  <%= f.text_area :comments, size: "20" %>
-  <br>
+    <%= f.label :rating %>
+    <%= f.number_field :rating, max: 5, min: 1 %>
+    <br>
 
-  <%= f.submit "Edit Review" %>
-<% end %>
+    <%= f.text_area :comments, size: "50x8" %>
+    <br>
+    <%= f.submit "Edit" %>
+    <%= button_to "Delete", camp_review_path, :method => :delete %>
+    
+  <% end %>

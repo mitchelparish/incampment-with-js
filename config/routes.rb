@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'camps#index'
   get 'profile', to: 'users#show'
-  resources :categories, only: :show 
+  resources :categories, only: :show
 
   # RegistrationsController
   get '/register', to: 'registrations#new'
@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
 
   # Nested Resources for Users/Reviews
-  resources :camps do
-    resources :reviews
+  resources :camps, only: [:new, :create, :show, :edit, :update] do
+    resources :reviews, only: [:new, :create, :edit, :update, :destroy]
   end
 
   # ActiveRecord Scope Method Requirement
