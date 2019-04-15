@@ -20,13 +20,17 @@
    background-size: cover;
  }
 
+ .panel-transparent .panel-body{
+        background: rgba(46, 51, 56, 0.2)!important;
+    }
+
 .col-lg-10 {
   flex-direction: column;
   justify-content: left;
   align-items: left;
   height: 100vh;
   width: 100%;
-  background-color: rgb(277, 226, 226);
+  background-color: rgb(277, 226, 226)!important;
   opacity: .3;
 }
 

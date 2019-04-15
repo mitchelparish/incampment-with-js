@@ -2,6 +2,10 @@
 <h3><%= @camp.name %></h3><br>
 <p>Located in: <%= @camp.state %></p>
 <p>GPS Coordinates: <%= @camp.lat %>, <%= @camp.lng %></p>
+<p>Categories:
+<% @camp.categories.each do |category| %>
+<%= category.name %>
+<% end %></p>
 <p>Last Updated: <%= @camp.updated_at.strftime("%b %d, %Y") %></p>
 <p>Description: <br><br>
 <%= @camp.description %></p>
@@ -9,6 +13,7 @@
 <% if !@camp.reviews.empty? %>
 <%= link_to "Write A Review", new_camp_review_path(@camp) %>
 <% end %>
+
 <%= link_to "Edit", edit_camp_path %><br>
 
 <%= link_to "Back to Camps", camps_path %><br><br><br>

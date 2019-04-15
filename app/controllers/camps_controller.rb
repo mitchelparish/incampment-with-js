@@ -12,8 +12,8 @@ class CampsController < ApplicationController
 
   def create
     @camp = Camp.new(camp_params)
-    byebug
     if @camp.save
+      byebug
       redirect_to @camp
     else
       render :new
@@ -40,6 +40,6 @@ class CampsController < ApplicationController
   private
 
   def camp_params
-    params.require(:camp).permit(:name, :state, :description, :lat, :lng, :categories)
+    params.require(:camp).permit(:name, :state, :description, :lat, :lng, category_ids:[])
   end
 end
