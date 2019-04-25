@@ -24,7 +24,8 @@
 <% else %>
 <% @camp.reviews.each do |review| %>
 <p> Rating: <%= review.rating %><br>
-<%= review.user.username %></br>
+By: <%= review.user.username %></br>
 <%= review.comments %></p>
 <% end %>
 <% end %>
+<br>
