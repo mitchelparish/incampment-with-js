@@ -13,7 +13,6 @@ class CampsController < ApplicationController
   def create
     @camp = Camp.new(camp_params)
     if @camp.save
-      byebug
       redirect_to @camp
     else
       render :new

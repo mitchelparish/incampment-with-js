@@ -1,3 +1,6 @@
-<br><br>
-
-<h3><%= @category.name %></h3><br>
+<br>
+<h3><%= @category.name %></h3>
+<p><% @category.camps.each do |camp| %></p>
+<%= link_to camp.name, camp_path(camp.id) %>
+<br>
+<% end %>

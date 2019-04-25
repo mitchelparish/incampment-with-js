@@ -10,21 +10,19 @@
 
 <%= form_for @camp do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.label :state %>
+  <%= f.text_field :name, size: '30' %>
   <%= f.select :state, us_states, include_blank: true, :prompt => 'Select State' %>
-  <br>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
   <br>
   <%= f.label :Latitude %>
   <%= f.text_field :lat %>
-  <br>
   <%= f.label :Longitude %>
   <%= f.text_field :lng %>
+  <%= link_to 'Find Lat/Lon', 'https://www.google.com/maps', target: :_blank %>
+  <br><br>
+  <%= f.text_area :description, size: "59x8", placeholder: 'Description' %>
   <br>
+  Categories:
   <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
-  <br>
+  <br><br>
   <%= f.submit %>
 <% end %>
