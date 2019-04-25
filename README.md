@@ -1,24 +1,21 @@
-# README
+# Welcome to Incampment
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Incampment is a campsite logging app that allows users to establish and share campsites throughout the United States. It was created to solve the problem of finding and sharing lesser-known (and thus usually better) campsites. Campsites can be rated, reviewed and categorized. 
 
-Things you may want to cover:
+Users have the option to create credentials unique to the app or to utilize third party authorization via Omniauth and Github - because all friends worth having have a Github account.
 
-* Ruby version
+## Getting Started
 
-* System dependencies
+To run a local version of Incampment clone the repo and run `bundle install`. `rails db:seed` followed by `rails db:migrate` to create a local database and then use `rails s` to initialize a server, the app will then be available to you on `localhost:3000`.
 
-* Configuration
+## Contributing
 
-* Database creation
+Bug reports and pull requests are welcome on GitHub at https://github.com/mitchelparish/incampment. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-* Database initialization
+## Versioning
 
-* How to run the test suite
+Version 1 - Juniper
 
-* Services (job queues, cache servers, search engines, etc.)
+## License
 
-* Deployment instructions
-
-* ...
+The project is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
