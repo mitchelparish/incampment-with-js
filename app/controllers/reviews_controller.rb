@@ -22,6 +22,10 @@ class ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
+
+    if @review.user != current_user
+      redirect_to camp_path(@review.camp)
+    end
   end
 
   def update
