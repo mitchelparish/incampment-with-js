@@ -1,6 +1,6 @@
 # Welcome to Incampment
 
-Incampment is a campsite logging app that allows users to establish and share campsites throughout the United States. It was created to solve the problem of finding and sharing lesser-known (and thus usually better) campsites. Campsites can be rated, reviewed and categorized. 
+Incampment is a campsite logging app that allows users to establish and share campsites throughout the United States. It was created to solve the problem of finding and sharing lesser-known (and thus usually better) campsites. Campsites can be rated, reviewed and categorized.
 
 Users have the option to create credentials unique to the app or to utilize third party authorization via Omniauth and Github - because all friends worth having have a Github account.
 
@@ -14,7 +14,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/mitche
 
 ## Versioning
 
-Version 1 - Juniper
+Version 2 - Bandelier 
 
 ## License
 
