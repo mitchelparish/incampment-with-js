@@ -8,22 +8,21 @@
 <% end %></p>
 <p>Last Updated: <%= @camp.updated_at.strftime("%b %d, %Y") %></p>
 <p>Description: <br><br>
-<%= @camp.description %></p>
+<%= @camp.description %>
+<%= link_to "Edit Campsite", edit_camp_path %><br></p>
+<br>
 
+<!-- @camp.reviews.each do |review|
+Rating: review.rating
+By: review.user.username
+ review.comments
+-->
 
-
-<%= link_to "Edit", edit_camp_path %><br>
-
-<%= link_to "Back to Camps", camps_path %><br><br><br>
-
-
-<div class="get-reviews">
-  <a href="">Click This<a/>
+<div id="get-reviews">
+  See Reviews
 </div>
-
-
-<h3>Reviews</h3>
-
+<div id="post-review">
+  Leave a Review
+</div>
 <div id='reviews'>
-  [Reviews Here]
-  </div>
+</div>

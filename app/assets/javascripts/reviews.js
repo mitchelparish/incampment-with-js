@@ -1,15 +1,30 @@
 $(function () {
   console.log('reviews.js is loaded...')
-  listenForReviewsClick()
+  // listenForReviewsClick()
 });
 
+// function listenForReviewsClick() {
+//   $('.get-reviews').on('click', function(event) {
+//     event.preventDefault();
+//     getReviews();
+//     });
+// };
 
-function listenForReviewsClick() {
-  $('.get-reviews').on('click', function(event) {
-    event.preventDefault();
-    getReviews();
-  });
-};
+
+let reviewSelector = document.querySelector('#get-reviews');
+
+reviewSelector.addEventListener('click', function(event){
+ 	event.preventDefault();
+  getReviews();
+}, {once : true});  // Not great but prevents duplication
+
+let leaveReviewSelector = document.querySelector('#post-review');
+
+leaveReviewSelector.addEventListener('click', function(event){
+  // serve up that form bitch!
+})
+
+
 
 
 function getReviews() {
@@ -20,13 +35,9 @@ function getReviews() {
     success: function(data){
       console.log("The data is: ", data)
       data.map(review => {
-
         let newReview =  new Review(review)
-
         let newReviewHtml = newReview.postHtml()
-
           document.getElementById('reviews').innerHTML += newReviewHtml
-          debugger
       }
     )}
   })
@@ -44,13 +55,6 @@ function getReviews() {
 // }
 
 
-
-
-
-
-
-
-
 class Review {
   constructor(obj) {
     this.rating = obj.rating
@@ -65,8 +69,10 @@ class Review {
 Review.prototype.postHtml = function() {
   return (`
     <div class="reviews">
-      <p>${this.rating}
-      ${this.comments}</p>
+      <p>
+        Rating: ${this.rating}<br>
+        ${this.comments}
+      </p>
     </div>
   `)
 }
