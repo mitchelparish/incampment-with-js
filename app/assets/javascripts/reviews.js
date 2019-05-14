@@ -16,16 +16,7 @@ let reviewSelector = document.querySelector('#get-reviews');
 reviewSelector.addEventListener('click', function(event){
  	event.preventDefault();
   getReviews();
-}, {once : true});  // Not great but prevents duplication
-
-let leaveReviewSelector = document.querySelector('#post-review');
-
-leaveReviewSelector.addEventListener('click', function(event){
-  // serve up that form bitch!
-})
-
-
-
+}, {once : true});
 
 function getReviews() {
   $.ajax({
@@ -41,6 +32,17 @@ function getReviews() {
       }
     )}
   })
+}
+
+let leaveReviewSelector = document.querySelector('#post-review');
+
+leaveReviewSelector.addEventListener('click', function(event){
+  event.preventDefault();
+  postReview();
+}, {once: true});
+
+function postReview() {
+  
 }
 
 // function getReviews() {
