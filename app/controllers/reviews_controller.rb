@@ -18,6 +18,7 @@ class ReviewsController < ApplicationController
 
   def show
     @review = Review.find(params[:id])
+    render json: @review, status: 200
   end
 
   def edit

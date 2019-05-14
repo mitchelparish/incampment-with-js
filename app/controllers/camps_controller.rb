@@ -21,6 +21,10 @@ class CampsController < ApplicationController
 
   def show
     @camp = Camp.find(params[:id])
+    respond_to do |f|
+      f.html {render :show}
+      f.json {render json: @camp}
+    end
   end
 
   def edit
