@@ -16,10 +16,11 @@ Rails.application.routes.draw do
   # OmniAuth Callback
   get '/auth/:provider/callback', to: 'sessions#create'
 
-  # Nested Resources for Users/Reviews
-  resources :camps, only: [:index, :new, :create, :show, :edit, :update] do
-    resources :reviews
-  end
+
+  resources :camps, only: [:index, :new, :create, :show, :edit, :update]
+  resources :reviews
+
+
 
   # ActiveRecord Scope Method Requirement
   get '/top_rated', to: 'reviews#top_rated'

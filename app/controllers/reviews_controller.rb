@@ -1,6 +1,11 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, except: :top_rated
 
+  def index
+    @reviews = Review.all
+    render json: @reviews, status: 200
+  end
+
   def new
     @review = Review.new(camp_id: params[:camp_id])
   end
