@@ -18,6 +18,12 @@
 
 <%= link_to "Back to Camps", camps_path %><br><br><br>
 
+
+<div class="review">
+  <a href="#">Click This<a/>
+</div>
+
+
 <h3>Reviews</h3>
 <% if @camp.reviews.empty? %>
 <%= link_to "Write the first review", new_camp_review_path(@camp) %>

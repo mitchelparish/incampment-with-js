@@ -1,10 +1,11 @@
 <br>
 <br>
 <h3>Recent:</h3>
-<% @camps.each do |camp| %>
 
-<%= link_to camp.name, camp_path(camp) %><br>
-<% end %><br><br>
+  <% @camps.each do |camp| %>
+  <%= link_to camp.name, camp_path(camp) %><br>
+  <% end %><br><br>
+
 
 <h3>By Category:</h3>
 <% @categories.each do |category| %>

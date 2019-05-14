@@ -5,6 +5,7 @@ ruby '2.6.1'
 
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'jquery-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
