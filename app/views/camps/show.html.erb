@@ -1,16 +1,29 @@
-<br>
-<h3><%= @camp.name %></h3><br>
-<p>Located in: <%= @camp.state %></p>
-<p>GPS Coordinates: <%= @camp.lat %>, <%= @camp.lng %></p>
-<p>Categories:
-<% @camp.categories.each do |category| %>
-<%= category.name %>
-<% end %></p>
-<p>Last Updated: <%= @camp.updated_at.strftime("%b %d, %Y") %></p>
-<p>Description: <br><br>
-<%= @camp.description %>
-<%= link_to "Edit Campsite", edit_camp_path %><br></p>
-<br>
+<div id="camp-name">
+  <br><h3><%= @camp.name %></h3>
+</div>
+<div id="last-updated">
+  <p><em>Last Updated: <%= @camp.updated_at.strftime("%b %d, %Y") %></em></p>
+</div>
+<div id="location">
+  <b>Located in:</b> <%= @camp.state %>
+</div>
+<div id="coordinates">
+  <b>GPS Coordinates:</b> <%= @camp.lat %>, <%= @camp.lng %>
+</div>
+<div id="categories">
+  <b>Categories:</b>
+  <% @camp.categories.each do |category| %>
+  <%= category.name %>
+  <% end %>
+  <br><br>
+</div>
+<div id="camp-description">
+  <p>
+    <%= @camp.description %>
+    <%= link_to "Edit Campsite", edit_camp_path %>
+  </p>
+</div>
+
 
 <!-- @camp.reviews.each do |review|
 Rating: review.rating
@@ -19,10 +32,11 @@ By: review.user.username
 -->
 
 <div id="get-reviews">
-  See Reviews
+  Read Reviews
 </div>
 <div id="post-review">
   Leave a Review
 </div>
 <div id='reviews'>
+  <br>
 </div>

@@ -24,11 +24,13 @@ body {
   flex-direction: column;
   justify-content: left;
   align-items: left;
-  height: 100vh;
+  height: 88vh;
   width: 100%;
   overflow-x: auto;
   border-radius: 25px;
-  background-color: rgba(277, 226, 226, .4);
+  background-color: rgb(255,255,255)
+  /* TRANSPARENT background-color: rgba(277, 226, 226, .4); */
+  /* GRAY background-color: rgb(224, 224, 224) */
 
 }
 
