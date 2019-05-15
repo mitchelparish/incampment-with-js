@@ -1,5 +1,5 @@
 $(function () {
-  console.log('reviews.js is loaded...')
+  console.log('reviews.js successfully loaded.')
   // listenForReviewsClick()
 });
 
@@ -24,11 +24,10 @@ function getReviews() {
     method: 'get',
     dataType: 'json',
     success: function(data){
-      console.log("The data is: ", data)
       data.map(review => {
         let newReview =  new Review(review)
         let newReviewHtml = newReview.postHtml()
-          document.getElementById('reviews').innerHTML += newReviewHtml
+        document.getElementById('reviews').innerHTML += newReviewHtml
       }
     )}
   })
@@ -42,7 +41,7 @@ leaveReviewSelector.addEventListener('click', function(event){
 }, {once: true});
 
 function postReview() {
-  
+
 }
 
 // function getReviews() {

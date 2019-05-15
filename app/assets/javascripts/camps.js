@@ -1,3 +1,3 @@
 $(function () {
-  console.log('camps.js is loaded...')
+  console.log('camps.js successfully loaded.')
 });

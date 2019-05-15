@@ -11,14 +11,11 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(reviews_params)
-    @review.user = current_user
-
-    if @review.save
-      redirect_to camp_path(@review.camp)
-    else
-      render :new
-    end
+    # @review = Review.new(reviews_params)
+    # @review.user = current_user
+    # @review.save
+    @review = Review.create(post_params)
+    render json: @review, status: 201
   end
 
   def show
