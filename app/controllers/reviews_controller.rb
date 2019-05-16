@@ -13,9 +13,14 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(reviews_params)
     @review.user = current_user
-    @review.save
-    render json: @review, status: 201
+    if @review.save
+      render json: @review, status: 201
+    else
+      render :new
+    end
   end
+
+
 
   def show
     @review = Review.find(params[:id])

@@ -8,13 +8,15 @@
   </div>
 <% end %>
 
-<%= form_for @review do |f| %>
+<%= form_for @review, url:camp_reviews_path do |f| %>
+
   <%= f.hidden_field :camp_id %>
+
   <%= f.label :rating %>
   <%= f.number_field :rating, max: 5, min: 1 %>
   <br>
-  <%= f.text_area :comments, size: "50x4" %>
+
+  <%= f.text_area :comments, size: "50x8" %>
   <br>
   <%= f.submit "Submit Review" %>
-  <br><br>
 <% end %>

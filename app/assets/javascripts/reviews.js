@@ -10,13 +10,14 @@ $(function () {
 //     });
 // };
 
-
 let reviewSelector = document.querySelector('#get-reviews');
 
 reviewSelector.addEventListener('click', function(event){
  	event.preventDefault();
   getReviews();
 }, {once : true});
+
+
 function getReviews() {
   $.ajax({
     url: `http://localhost:3000/camps/${document.querySelector('#camp-name').dataset.id}/reviews`,
@@ -31,20 +32,6 @@ function getReviews() {
     )}
   })
 }
-
-// function getReviews() {
-//   fetch('http://localhost:3000/reviews')
-//   .then(res => res.json())
-//   .then(data => {
-//     debugger
-//     const review = new Review(data.message)
-//     const reviewHTML = review.postHtml()
-//     document.getElementById('reviews').innerHTML = reviewHTML
-//   })
-// }
-
-
-
 
 
 let leaveReviewSelector = document.querySelector('#post-review');
