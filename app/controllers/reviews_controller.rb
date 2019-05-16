@@ -11,10 +11,9 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    # @review = Review.new(reviews_params)
-    # @review.user = current_user
-    # @review.save
-    @review = Review.create(post_params)
+    @review = Review.new(reviews_params)
+    @review.user = current_user
+    @review.save
     render json: @review, status: 201
   end
 

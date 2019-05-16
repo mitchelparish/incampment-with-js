@@ -33,6 +33,21 @@ function getReviews() {
   })
 }
 
+// function getReviews() {
+//   fetch('http://localhost:3000/reviews')
+//   .then(res => res.json())
+//   .then(data => {
+//     debugger
+//     const review = new Review(data.message)
+//     const reviewHTML = review.postHtml()
+//     document.getElementById('reviews').innerHTML = reviewHTML
+//   })
+// }
+
+
+
+
+
 let leaveReviewSelector = document.querySelector('#post-review');
 
 leaveReviewSelector.addEventListener('click', function(event){
@@ -44,16 +59,6 @@ function postReview() {
 
 }
 
-// function getReviews() {
-//   fetch('http://localhost:3000/reviews')
-//   .then(res => res.json())
-//   .then(data => {
-//     debugger
-//     const review = new Review(data.message)
-//     const reviewHTML = review.postHtml()
-//     document.getElementById('reviews').innerHTML = reviewHTML
-//   })
-// }
 
 
 class Review {

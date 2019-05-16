@@ -7,16 +7,14 @@
     </ul>
   </div>
 <% end %>
-<%= @review.camp.name %> - <%= @review.camp.state %><br><br>
-<%= form_for @review, url:camp_reviews_path do |f| %>
 
+<%= form_for @review do |f| %>
   <%= f.hidden_field :camp_id %>
-
   <%= f.label :rating %>
   <%= f.number_field :rating, max: 5, min: 1 %>
   <br>
-
-  <%= f.text_area :comments, size: "50x8" %>
+  <%= f.text_area :comments, size: "50x4" %>
   <br>
   <%= f.submit "Submit Review" %>
+  <br><br>
 <% end %>

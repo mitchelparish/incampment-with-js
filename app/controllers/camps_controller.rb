@@ -20,6 +20,7 @@ class CampsController < ApplicationController
   end
 
   def show
+    @review = Review.new
     @camp = Camp.find(params[:id])
     respond_to do |f|
       f.html {render :show}
