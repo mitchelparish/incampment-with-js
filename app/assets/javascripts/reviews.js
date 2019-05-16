@@ -17,10 +17,9 @@ reviewSelector.addEventListener('click', function(event){
  	event.preventDefault();
   getReviews();
 }, {once : true});
-
 function getReviews() {
   $.ajax({
-    url: 'http://localhost:3000/reviews',
+    url: `http://localhost:3000/camps/${document.querySelector('#camp-name').dataset.id}/reviews`,
     method: 'get',
     dataType: 'json',
     success: function(data){
