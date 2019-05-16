@@ -20,7 +20,7 @@ body {
    background-size: cover;
  }
 
-.col-lg-10 {
+.col-lg-8 {
   flex-direction: column;
   justify-content: left;
   align-items: left;
@@ -28,9 +28,9 @@ body {
   width: 100%;
   overflow-x: auto;
   border-radius: 25px;
-  background-color: rgb(255,255,255)
-  /* TRANSPARENT background-color: rgba(277, 226, 226, .4); */
-  /* GRAY background-color: rgb(224, 224, 224) */
+  /* background-color: rgb(255,255,255) */
+  background-color: rgba(277, 226, 226, .4);
+  /* background-color: rgb(224, 224, 224) */
 
 }
 
