@@ -40,7 +40,7 @@
             <li class="nav-item">
               <a class="nav-link" <%= link_to "New Campsite", new_camp_path %> </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item user">
               <a class="nav-link" <%= link_to "Profile", profile_path %> </a>
             </li>
             <li class="nav-item">
@@ -50,15 +50,19 @@
         </ul>
       </div>
     </nav>
-    
+
 
     <div class="container">
       <div class="row">
         <div class="col-lg-2">
         </div>
-        <div class="col-lg-8">
-          <%= yield %>
-        </div>
+
+          <div class="col-lg-8">
+            <div id="main">
+            <%= yield %>
+            </div>
+          </div>
+
         <div class="col-lg-2">
         </div>
       </div>
