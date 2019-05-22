@@ -2,7 +2,8 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!, except: :top_rated
 
   def index
-    @reviews = Review.all
+    camp = Camp.find(params[:camp_id])
+    @reviews = camp.reviews
     render json: @reviews, status: 200
   end
 
@@ -22,10 +23,10 @@ class ReviewsController < ApplicationController
 
 
 
-  def show
-    @review = Review.find(params[:id])
-    render json: @review, status: 200
-  end
+  # def show
+  #   @review = Review.find(params[:id])
+  #   render json: @review, status: 200
+  # end
 
   def edit
     @review = Review.find(params[:id])
