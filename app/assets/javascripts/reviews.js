@@ -1,14 +1,6 @@
 $(function () {
   console.log('reviews.js successfully loaded.')
-  // listenForReviewsClick()
 });
-
-// function listenForReviewsClick() {
-//   $('.get-reviews').on('click', function(event) {
-//     event.preventDefault();
-//     getReviews();
-//     });
-// };
 
 let reviewSelector = document.querySelector('#get-reviews');
 
@@ -16,7 +8,6 @@ reviewSelector.addEventListener('click', function(event){
  	event.preventDefault();
   getReviews();
 }, {once : true});
-
 
 function getReviews() {
   $.ajax({
@@ -32,20 +23,6 @@ function getReviews() {
     )}
   })
 }
-
-
-let leaveReviewSelector = document.querySelector('#post-review');
-
-leaveReviewSelector.addEventListener('click', function(event){
-  event.preventDefault();
-  postReview();
-}, {once: true});
-
-function postReview() {
-
-}
-
-
 
 class Review {
   constructor(obj) {
