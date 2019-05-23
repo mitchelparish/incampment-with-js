@@ -7,7 +7,7 @@ let userSelector = document.querySelector('.user');
 userSelector.addEventListener('click', function(event){
  	event.preventDefault();
   getUser();
-}, {once : true});  // remove once : true once completed
+});  
 
 function getUser() {
   $.ajax({
@@ -27,14 +27,9 @@ class User {
     this.id = obj.id
     this.username = obj.username
     this.created_at = obj.created_at
-    this.camps = obj.camps.forEach(function (camp) {
-      console.log(camp.name);
-      console.log(camp.state);
-    })
-
+    this.camps = obj.camps
   }
 }
-
 
 User.prototype.postHtml = function() {
   return (`
@@ -43,7 +38,7 @@ User.prototype.postHtml = function() {
         <br>
         User: ${this.username}<br>
         Member Since: ${this.created_at}<br><br>
-        Camps Visited:<br> ${this.camps}
+        Places You've Been:<br> ${this.camps.map(camp => `<li>${camp.name}</li>`)}
       </p>
     </div>
   `)
