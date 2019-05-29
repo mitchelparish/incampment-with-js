@@ -4,6 +4,13 @@ Incampment is a campsite logging app that allows users to establish and share ca
 
 Users have the option to create credentials unique to the app or to utilize third party authorization via Omniauth and Github - because all friends worth having have a Github account.
 
+**Javascript Features Added (ES6)**:
+
+* Rails API - JSON translated into JS model objects
+* Dynamic form handling for campsite reviews
+* Campsite reviews rendered/expand via JS
+* User profile page rendered via JS
+
 [Original version](https://github.com/mitchelparish/incampment) (without JavaScript)
 
 ## Getting Started
