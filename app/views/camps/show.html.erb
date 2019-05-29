@@ -23,22 +23,15 @@
     <%= link_to "Edit Campsite", edit_camp_path %>
   </p>
 </div>
-
-
-
-<!-- @camp.reviews.each do |review|
-Rating: review.rating
-By: review.user.username
- review.comments
--->
-
-<div id="get-reviews">
-  Read Reviews
-</div>
-<div id='reviews'>
-  <br>
-</div>
-<div id="post-review">
-  <h3>Leave a Review</h3>
-  <%= render 'reviews/form', review: @review %>
+<div class="reviews">
+  <div id="get-reviews">
+    Read Reviews
+  </div>
+  <div id='reviews'>
+    <br>
+  </div>
+  <div id="post-review">
+    <h3>Leave a Review</h3>
+    <%= render 'reviews/form', review: @review %>
+  </div>
 </div>

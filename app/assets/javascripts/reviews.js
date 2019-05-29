@@ -1,6 +1,10 @@
+// Verify .js file has loaded.
+
 $(function () {
   console.log('reviews.js successfully loaded.')
 });
+
+// Render Camp reviews upon user click
 
 let reviewSelector = document.querySelector('#get-reviews');
 
@@ -45,3 +49,22 @@ Review.prototype.postHtml = function() {
     </div>
   `)
 }
+
+// Handle form submission and dynamic posting to DOM
+
+$(function () {
+   $('form').submit(function(event) {
+     event.preventDefault();
+     console.log('So far so good');
+
+     var values = $(this).serialize();
+     var posting = $.post(`/camps/${document.querySelector('#camp-name').dataset.id}/reviews`, values);
+
+     posting.done(function(data) {
+       console.log(data)
+       var post = data;
+        $("#postTitle").text(post["title"]);
+        $("#postBody").text(post["description"]);
+     })
+   });
+ });
