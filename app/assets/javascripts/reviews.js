@@ -55,18 +55,21 @@ Review.prototype.postHtml = function() {
 $(function () {
    $('form').submit(function(event) {
      event.preventDefault();
+
      if(validateForm()) {
-     getReviews();
+       getReviews();
+       let values = $(this).serialize();
+       let posting = $.post(`/camps/${document.querySelector('#camp-name').dataset.id}/reviews`, values);
 
-     let values = $(this).serialize();
-     let posting = $.post(`/camps/${document.querySelector('#camp-name').dataset.id}/reviews`, values);
-
-     posting.done(function(data) {
-       let newReviewData = new Review(data);
-       let newReviewDataHtml = newReviewData.postHtml();
-       document.getElementById('reviews').innerHTML += newReviewDataHtml;
-     })
-   }
+       posting.done(function(data) {
+         let newReviewData = new Review(data);
+         let newReviewDataHtml = newReviewData.postHtml();
+         document.getElementById('reviews').innerHTML += newReviewDataHtml;
+       });
+       
+       document.getElementById("rating").value = ''    // I hate this solution
+       document.getElementById("comments").value = ''
+     }
    });
 });
 
