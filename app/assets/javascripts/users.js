@@ -7,9 +7,10 @@ let userSelector = document.querySelector('.user');
 userSelector.addEventListener('click', function(event){
  	event.preventDefault();
   getUser();
-});  
+});
 
 function getUser() {
+  changeURL();
   $.ajax({
     url: `http://localhost:3000/profile`,
     method: 'get',
@@ -42,4 +43,12 @@ User.prototype.postHtml = function() {
       </p>
     </div>
   `)
+}
+
+function changeURL() {
+  let stateObj = {
+    user: "profile",
+  };
+
+  history.pushState(stateObj, "", "/profile.html");
 }

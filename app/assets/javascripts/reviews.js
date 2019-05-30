@@ -64,7 +64,6 @@ $(function () {
        let newReviewData = new Review(data);
        let newReviewDataHtml = newReviewData.postHtml();
        document.getElementById('reviews').innerHTML += newReviewDataHtml;
-
      })
    });
 });
