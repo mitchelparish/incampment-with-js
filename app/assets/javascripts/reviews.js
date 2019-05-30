@@ -1,7 +1,7 @@
 // Verify .js file has loaded.
 
 $(function () {
-  console.log('reviews.js successfully loaded.')
+  console.log('reviews.js successfully loaded.');
 });
 
 // Render Camp reviews upon user click
@@ -20,9 +20,9 @@ function getReviews() {
     dataType: 'json',
     success: function(data){
       data.map(review => {
-        let newReview =  new Review(review)
-        let newReviewHtml = newReview.postHtml()
-        document.getElementById('reviews').innerHTML += newReviewHtml
+        let newReview =  new Review(review);
+        let newReviewHtml = newReview.postHtml();
+        document.getElementById('reviews').innerHTML += newReviewHtml;
       }
     )}
   })
@@ -30,12 +30,12 @@ function getReviews() {
 
 class Review {
   constructor(obj) {
-    this.rating = obj.rating
-    this.comments = obj.comments
-    this.user_id = obj.user_id
-    this.camp_id = obj.camp_id
-    this.created_at = obj.created_at
-    this.updated_at = obj.updated_at
+    this.rating = obj.rating;
+    this.comments = obj.comments;
+    this.user_id = obj.user_id;
+    this.camp_id = obj.camp_id;
+    this.created_at = obj.created_at;
+    this.updated_at = obj.updated_at;
   }
 }
 
@@ -55,16 +55,16 @@ Review.prototype.postHtml = function() {
 $(function () {
    $('form').submit(function(event) {
      event.preventDefault();
-     console.log('So far so good');
+     getReviews();
 
-     var values = $(this).serialize();
-     var posting = $.post(`/camps/${document.querySelector('#camp-name').dataset.id}/reviews`, values);
+     let values = $(this).serialize();
+     let posting = $.post(`/camps/${document.querySelector('#camp-name').dataset.id}/reviews`, values);
 
      posting.done(function(data) {
-       console.log(data)
-       var post = data;
-        $("#postTitle").text(post["title"]);
-        $("#postBody").text(post["description"]);
+       let newReviewData = new Review(data);
+       let newReviewDataHtml = newReviewData.postHtml();
+       document.getElementById('reviews').innerHTML += newReviewDataHtml;
+
      })
    });
- });
+});
