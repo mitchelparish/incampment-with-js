@@ -1,3 +1,5 @@
+// Verify .js file has loaded.
+
 $(function () {
   console.log('users.js successfully loaded.')
 });
@@ -50,5 +52,5 @@ function changeURL() {
     user: "profile",
   };
 
-  history.pushState(stateObj, "", "/profile.html");
+  history.pushState(stateObj, "", "/profile");
 }
