@@ -9,14 +9,11 @@
 <% end %>
 
 <%= form_for @review, url:camp_reviews_path(@camp.id) do |f| %>
-
   <%= f.hidden_field :camp_id %>
-
   <%= f.label :rating %>
-  <%= f.number_field :rating, max: 5, min: 1 %>
+  <%= f.number_field :rating, id: 'rating', max: 5, min: 1 %>
   <br>
-
-  <%= f.text_area :comments, size: "50x4" %>
+  <%= f.text_area :comments, id: 'comments', size: "50x4" %>
   <br>
   <%= f.submit "Submit Review" %>
 <% end %>

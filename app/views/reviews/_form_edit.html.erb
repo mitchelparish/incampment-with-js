@@ -10,9 +10,7 @@
 
   <%= @review.camp.name %> - <%= @review.camp.state %><br><br>
   <%= form_for @review, url:camp_review_path do |f| %>
-
     <%= f.hidden_field :camp_id %>
-
     <%= f.label :rating %>
     <%= f.number_field :rating, max: 5, min: 1 %>
     <br>

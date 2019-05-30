@@ -55,6 +55,7 @@ Review.prototype.postHtml = function() {
 $(function () {
    $('form').submit(function(event) {
      event.preventDefault();
+     if(validateForm()) {
      getReviews();
 
      let values = $(this).serialize();
@@ -65,5 +66,20 @@ $(function () {
        let newReviewDataHtml = newReviewData.postHtml();
        document.getElementById('reviews').innerHTML += newReviewDataHtml;
      })
+   }
    });
 });
+
+// Client-side form validation
+
+function validateForm() {
+  const rating = document.getElementById('rating').value;
+  const comments = document.getElementById('comments').value;
+
+  if (rating == '' || comments == '') {
+    alert('All fields are required.');
+    return false;
+  } else {
+      return true;
+    }
+  }
