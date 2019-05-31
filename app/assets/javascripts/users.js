@@ -2,14 +2,14 @@
 
 $(function () {
   console.log('users.js successfully loaded.')
-});
+})
 
 let userSelector = document.querySelector('.user');
 
 userSelector.addEventListener('click', function(event){
  	event.preventDefault();
   getUser();
-});
+}, {once : true});
 
 function getUser() {
   changeURL();
@@ -21,9 +21,9 @@ function getUser() {
       let newUser =  new User(data)
       let newUserHtml = newUser.postHtml()
         document.getElementById('main').innerHTML = newUserHtml
-      }
-    })
-  }
+    }
+  })
+}
 
 class User {
   constructor(obj) {
@@ -41,7 +41,7 @@ User.prototype.postHtml = function() {
         <br>
         User: ${this.username}<br>
         Member Since: ${this.created_at}<br><br>
-        Places You've Been:<br> ${this.camps.map(camp => `<li>${camp.name}</li>`)}
+        Places You've Been:<br> ${this.camps.map(camp => `<li>${camp.name}</li>`).join("")}
       </p>
     </div>
   `)

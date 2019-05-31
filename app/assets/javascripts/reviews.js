@@ -57,7 +57,9 @@ $(function () {
      event.preventDefault();
 
      if(validateForm()) {
-       getReviews();
+       if($('.reviews').length <= 1){
+         getReviews();
+       }
        let values = $(this).serialize();
        let posting = $.post(`/camps/${document.querySelector('#camp-name').dataset.id}/reviews`, values);
 
@@ -66,9 +68,8 @@ $(function () {
          let newReviewDataHtml = newReviewData.postHtml();
          document.getElementById('reviews').innerHTML += newReviewDataHtml;
        });
-       
-       document.getElementById("rating").value = ''    // I hate this solution
-       document.getElementById("comments").value = ''
+       $('form')[0].reset()
+       return false
      }
    });
 });
